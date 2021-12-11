@@ -165,21 +165,22 @@ public class UserDAOImpl implements UserDAO {
 
 	}
 
-	public List<Integer> attractionObtained(int id) {
+	public List<Integer> attractionObtained(int userId) {
 		List<Integer> attractionList;
 
 		try {
 			attractionList = new ArrayList<Integer>();
-			String sql = "SELECT * FROM attractionsObtained WHERE userId = ?";
+			String sql = "SELECT attractionsId  "
+					+ " FROM attractionsObtained "
+					+ " WHERE userId = ?";
 			Connection conn = ConnectionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
-
-			statement.setInt(1, id);
+			statement.setInt(1, userId);
 
 			ResultSet resultados = statement.executeQuery();
 
 			while (resultados.next()) {
-				attractionList.add(resultados.getInt(2));
+				attractionList.add(resultados.getInt(1));
 			}
 
 			return attractionList;

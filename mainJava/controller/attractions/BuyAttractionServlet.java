@@ -28,7 +28,7 @@ public class BuyAttractionServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		Integer attractionId = Integer.parseInt(req.getParameter("id"));
+		Integer attractionId = Integer.parseInt(req.getParameter("attractionsPreferidas.id"));
 		User user = (User) req.getSession().getAttribute("user");
 		Map<String, String> errors = buyAttractionService.buy(user.getId(), attractionId);
 		
