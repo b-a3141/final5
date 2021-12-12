@@ -41,8 +41,8 @@ public class ListOwnedServlet extends HttpServlet implements Servlet {
 			
 			User user = (User) req.getSession().getAttribute("user");
 		
-		//	List<promotion> promotionsOwned = userOwnedService.promotionsOwnedList();
-		//	req.setAttribute("promotionsOwned", promotionsOwned);
+			List<promotion> promotionsOwned = userOwnedService.promotionsOwnedList(user.getId());
+			req.setAttribute("promotionsOwned", promotionsOwned);
 			
 			List<Attraction> attractionsOwned = userOwnedService.attractionsOwnedList(user.getId());
 			req.setAttribute("attractionsOwned", attractionsOwned);

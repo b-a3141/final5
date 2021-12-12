@@ -126,6 +126,8 @@
 			class="btn btn-danger rounded" role="button"><i class="bi bi-x-circle-fill"></i></a>
 		</c:if>
       </div>
+      
+      
     </div>
 
  </c:forEach>

@@ -10,13 +10,13 @@ import jakarta.servlet.ServletResponse;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 
-/**
- * Servlet implementation class BuyPromotionServlet
- */
-@WebServlet("/BuyPromotionServlet")
+
+@WebServlet("/promotion/buy.do")
 public class BuyPromotionServlet extends HttpServlet implements Servlet {
-       
-    /**
+ 
+	private static final long serialVersionUID = 1L;
+
+	/**
      * @see HttpServlet#HttpServlet()
      */
     public BuyPromotionServlet() {

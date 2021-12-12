@@ -19,25 +19,26 @@ public class UserOwnedService {
 
 
 	
-	public List<promotion> ttractionsOwnedList(User user) {
+	public List<promotion> promotionsOwnedList(Integer userId) {
 
-		userDAO.attractionObtained(user.getId());
+		List<Integer> promoCompradasId =	userDAO.promotionObtained(userId);
+		List<promotion> promotionsBuy = new ArrayList<promotion>();
+		for(Integer promoCompradaId : promoCompradasId ) {
+			promotionsBuy.add( promotionDAO.find(promoCompradaId) );
+		}
 		
-		List<promotion> promotionsOwned ;
-		
-
-		return null;
+		return promotionsBuy;
+			
 	}
 
 	public List<Attraction> attractionsOwnedList(Integer userId) {
 		List<Integer> atrCompradasId =	userDAO.attractionObtained(userId);
-		List<Attraction> attractionsBy = new ArrayList<Attraction>();
+		List<Attraction> attractionsBuy = new ArrayList<Attraction>();
 		for(Integer attracionId : atrCompradasId ) {
-			attractionsBy.add( attractionDAO.find(attracionId) );
+			attractionsBuy.add( attractionDAO.find(attracionId) );
 		}
-		System.out.println(attractionsBy);
 		
-		return attractionsBy;
+		return attractionsBuy;
 	}
 
 }

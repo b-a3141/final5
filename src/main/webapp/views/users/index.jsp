@@ -58,7 +58,18 @@
 			
  <c:forEach items="${promotionsOwned}" var="promotionsOwned">
 
-
+	
+	<div class="card" style="width: 100%;">
+	  <img src="${promotionsOwned.getImagen()} " class="card-img-top" 
+	  style="width: 50%;" alt="imagen_atraccion">
+	  <div class="card-body">
+	    <h5 class="card-title"><c:out value="${promotionsOwned.name}"></c:out></h5>
+	    <p class="card-text"><c:out value="${promotionsOwned.descripcion}"></c:out></p>
+	  </div>
+	  <ul class="list-group list-group-flush">
+	    <li class="list-group-item">Valor <c:out value="${promotionsOwned.cost}"></c:out></li>
+	  </ul>
+	 
 	  
     </div>
 
