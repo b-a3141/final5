@@ -34,7 +34,43 @@
 
 	<div class="container py-3"  >
 	
-	
+	<table class="table table-light table-striped
+	 table-hover">
+  <thead>
+    <tr>
+     
+      <th scope="col">Nombre</th>
+      <th scope="col">Descripcion</th>
+      <th scope="col">Costo</th>
+      <th scope="col">Tiempo</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    	
+ <c:forEach items="${promotionsOwned}" var="promotionsOwned">
+    
+    <tr>
+      
+      <td><c:out value="${promotionsOwned.name}"></c:out></td>
+      <td><c:out value="${promotionsOwned.descripcion}"></c:out></td>
+      <td><c:out value="${promotionsOwned.cost}"></c:out></td>
+       <td><c:out value="${promotionsOwned.duration}"></c:out></td> 
+    </tr>
+  </c:forEach>
+   
+   <c:forEach items="${attractionsOwned}" var="attractionsOwned">
+    
+    <tr>
+      
+      <td><c:out value="${attractionsOwned.name}"></c:out></td>
+      <td><c:out value="${attractionsOwned.descripcion}"></c:out></td>
+      <td><c:out value="${attractionsOwned.cost}"></c:out></td>
+       <td><c:out value="${attractionsOwned.duration}"></c:out></td> 
+    </tr>
+  </c:forEach>
+  </tbody>
+</table>
 	
  <c:forEach items="${promotionsOwned}" var="promotionsOwned">
 
