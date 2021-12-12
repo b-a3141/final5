@@ -45,7 +45,8 @@
 		</c:if>
 		
 		<div class="bg-light p-4 mb-3 rounded">
-			<h3>Lo que usted prefiere</h3>
+			<h3><c:out value="${user.getTypeAttractions().toUpperCase()}"></c:out></h3>
+			<h3>Lo que más le gusta</h3>
 		</div>
 
 
@@ -86,7 +87,7 @@
 
  </c:forEach>
 	
-		<div class="bg-light p-4 mb-3 rounded">
+		<div class="bg-light p-4 mt-5 mb-5 rounded">
 			<h3>Si no ha encontrado algo de su gusto principal, le sugerimos lo siguiente:</h3>
 		</div>
 
